@@ -1,0 +1,23 @@
+.friendDitails {
+  width: 100%;
+  border: solid 3px black;
+  border-radius: 8px;
+  background-color: lightgoldenrodyellow;
+
+}
+.friendPic
+  img {
+    width: 50px;
+    border-radius: 40%
+  }
+.friendPic {
+  display: flex;
+  justify-content: center;
+}
+.friendName, .friendAge, .friendGender, .friendId {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+

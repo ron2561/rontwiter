@@ -1,0 +1,13 @@
+<div class="search">
+  <button class="btn btn-primary" (click)="resetFNF()">Reset</button>
+  <input type="text" [(ngModel)]="friendNameFilter" placeholder="search friend">
+  <select class="browser-default custom-select"  [(ngModel)]="searchOption">
+    <option selected>Search option</option>
+    <option value="name">Name</option>
+    <option value="age">Age</option>
+    <option value="id">Id</option>
+  </select>
+</div>
+<div class="friendsList"><app-friendlist *ngFor="let friend of getCurrentFriends()" [friend]="friend"  ></app-friendlist></div>
+
+

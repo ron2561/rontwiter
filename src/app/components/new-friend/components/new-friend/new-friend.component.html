@@ -1,0 +1,24 @@
+<div class="main">
+<div class="addFriendDitails">
+  <form [formGroup]="newFriendsForm" (ngSubmit)="onSubmit(newFriendsForm.value)">
+    <div class="friendName">
+      friend name:<input formControlName="name" #names type="text" pattern="[a-zA-Z]*" required>
+    </div>
+    <div class="friendAge">
+      friend Age:  <input formControlName="age" #ages type="number" required>
+    </div>
+    <div class="friendGender">
+      friend gender: <input formControlName="gender" #genders type="text" pattern="[a-z]*" maxlength="5">
+    </div>
+    <div class="friendId">
+      friend id: <input formControlName="id" #ids type="number" required>
+    </div>
+    <button class="btn btn-primary" [disabled]="newFriendsForm.invalid" type="submit">Add friend</button>
+  </form>
+</div>
+<!--<div class="calendar"><app-calendar></app-calendar></div>-->
+</div>
+
+
+
+
