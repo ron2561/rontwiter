@@ -9,7 +9,7 @@ import {FriendService} from '../../services/friend.service';
 })
 export class FlParentComponent implements OnInit {
 
-  friendsList: Friend[];
+  friendsList:  Friend[];
   friendNameFilter = '';
   searchOption: any;
 
