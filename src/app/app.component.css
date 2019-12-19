@@ -1,1 +1,11 @@
-
+/*.middle {
+  display: flex;
+  flex-direction: initial;
+  float: left;
+  color: lightskyblue;
+}
+.inner {
+  display: flex;
+  color: chartreuse;
+  float: right;
+} */

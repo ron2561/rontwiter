@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild,} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, } from '@angular/core';
 import {Friend} from '../../../../entities/friend';
 import {FormBuilder, FormGroup} from '@angular/forms';
 
@@ -8,6 +8,10 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./new-friend.component.scss', '../../../friendlist/friendlist.component.css']
 })
 export class NewFriendComponent implements AfterViewInit {
+
+  public minDate: Date = new Date ('30/10/2018');
+  public maxDate: Date = new Date ('12/01/2022');
+  public value: Date = new Date ('30/11/2019');
 
   name: string;
   age: number;
@@ -52,5 +56,4 @@ export class NewFriendComponent implements AfterViewInit {
   ngAfterViewInit() {
 
   }
-
 }

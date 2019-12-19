@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { FormGroup} from '@angular/forms';
 import {$} from 'protractor';
+import {Friend} from '../../entities/friend';
 
 @Component({
   selector: 'app-calendar',
@@ -12,8 +14,21 @@ export class CalendarComponent implements OnInit {
   public maxDate: Date = new Date ('12/01/2022');
   public value: Date = new Date ('30/11/2019');
 
+
+  newSessionForm: any;
+
+  @Output()
+  newFriend = new EventEmitter<Friend>();
+  newFriendsForm: any;
+
   constructor() {}
 
+  onSubmit(friendData: any) {
+    const friend: Friend = new Friend(friendData.id, friendData.name, friendData.age);
+    this.newFriend.emit(friend);
+    // this.resetFriendFields();
+    this.newFriendsForm.reset();
+  }
 
   ngOnInit() {
     /*

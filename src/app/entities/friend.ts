@@ -22,3 +22,4 @@ export class Gender {
     this.isFemale = isFemale;
   }
 }
+

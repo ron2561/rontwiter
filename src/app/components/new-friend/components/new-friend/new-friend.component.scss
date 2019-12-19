@@ -1,23 +1,31 @@
+.main {
+color: darkorchid;
+
+}
+
 .addFriendDitails {
   background-color: aquamarine;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 40%;
-  margin-left: 0%;
+  float: left;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: flex-start;
+  //justify-content: space-between;
+  width: 44%;
+  //margin-left: 0;
   font-size: 30px;
 }
 input.ng-invalid {
   border: 1px solid #f10101;
 }
 
+
 .calendar {
-  display: flex;
+  //display: flex;
   //justify-content: center;
   background-color: pink;
   border: 1px solid #f10101;
-  width: 15%;
+  width: 44%;
+  float: right;
   justify-content: right;
 }
 
