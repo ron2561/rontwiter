@@ -1,32 +1,63 @@
 .main {
-color: darkorchid;
-
+  display: flex;
+  background-color: darkgrey;
 }
+
 
 .addFriendDitails {
   background-color: aquamarine;
-  float: left;
   //display: flex;
   //flex-direction: column;
   //align-items: flex-start;
   //justify-content: space-between;
-  width: 44%;
+  width: 60%;
   //margin-left: 0;
   font-size: 30px;
 }
+.addFriendForm {
+  display: flex;
+  height: 100%;
+}
+.friendTitles {
+  float: left;
+  width: 25%;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputim {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+
+
+}
+
 input.ng-invalid {
   border: 1px solid #f10101;
 }
-
 
 .calendar {
   //display: flex;
   //justify-content: center;
   background-color: pink;
+  color: pink;
   border: 1px solid #f10101;
-  width: 44%;
+  width: 30%;
   float: right;
-  justify-content: right;
+  size: 40px;
+  //justify-content: right;
+}
+
+.buttonAddFriend {
+float: left;
+  margin-top: auto;
+}
+
+.button {
+  float: right;
+  margin-top: auto;
 }
 
 

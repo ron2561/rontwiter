@@ -1,29 +1,41 @@
 <div class="main">
 
-<div class="addFriendDitails">
-  <form [formGroup]="newFriendsForm" (ngSubmit)="onSubmit(newFriendsForm.value)">
-    <div class="friendName">
-      friend name:<input formControlName="name" #names type="text" pattern="[a-zA-Z]*" required>
-    </div>
-    <div class="friendAge">
-      friend Age:  <input formControlName="age" #ages type="number" required>
-    </div>
-    <div class="friendGender">
-      friend gender: <input formControlName="gender" #genders type="text" pattern="[a-z]*" maxlength="5">
-    </div>
-    <div class="friendId">
-      friend id: <input formControlName="id" #ids type="number" required>
-    </div>
-    <button class="btn btn-primary" [disabled]="newFriendsForm.invalid" type="submit">Add friend</button>
-  </form>
-</div>
+  <div class="addFriendDitails">
+    <form class="addFriendForm" [formGroup]="newFriendsForm" (ngSubmit)="onSubmit(newFriendsForm.value)">
+      <div class="friendTitles">
+        <div class="friendName">
+          friend name:
+        </div>
+        <div class="friendAge">
+          friend Age:
+        </div>
+        <div class="friendGender">
+          friend gender:
+        </div>
+        <div class="friendId">
+          friend id:
+        </div>
+      </div>
+      <div class="inputim">
+        <input formControlName="name" #names type="text" pattern="[a-zA-Z]*" required>
+        <input formControlName="age" #ages type="number" required>
+        <input formControlName="gender" #genders type="text" pattern="[a-z]*" maxlength="5">
+        <input formControlName="id" #ids type="number" required>
+      </div>
+      <div class="buttonAddFriend">
+        <button class="btn btn-primary" [disabled]="newFriendsForm.invalid" type="submit">Add friend</button>
+      </div>
+    </form>
+  </div>
 
-<!--<div class="calendar"><app-calendar></app-calendar></div>-->
+  <!--<div class="calendar"><app-calendar></app-calendar></div>-->
   <div class="calendar">
     <ejs-calendar id=calendar [value]='value' [min]='minDate' [max]='maxDate'>
 
     </ejs-calendar>
-    <button class="btn btn-primary" (click)="$event">add Seasion</button>
+    <div class="button">
+      <button class="btn btn-primary" (click)="$event">add Seasion</button>
+    </div>
   </div>
 </div>
 

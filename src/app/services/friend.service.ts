@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Friend} from '../entities/friend';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FriendService {
-  yogi: Friend = {
+  /*yogi: Friend = {
     age: 20,
     gender: {
       isMale: true,
@@ -38,17 +39,28 @@ export class FriendService {
     isAlive: true
   };
 
-  yoel: Friend = new Friend(2000030, 'yoel', 30);
+  yoel: Friend = new Friend(2000030, 'yoel', 30); */
 
-  private friendsList: Friend[] = [this.moshe, this.eran, this.yogi, this.yoel];
+  private friendsList: Friend[] = [];
 
   getFriendsList() {
-    return this.friendsList;
+    return this.httpClient.get('http://localhost:3000/getAllFriends');
   }
 
   addFriend(friend: Friend) {
-    this.friendsList.push(friend);
+    // this.friendsList.push(friend);
+    this.httpClient.post('http://localhost:3000/saveFriend', {friend}, {responseType: 'text'}).subscribe((res) => {
+      this.getFriendsList();
+    });
+
   }
 
-  constructor() { }
+  deleteFriend(id: number) {
+    this.httpClient.post('http://localhost:3000/deleteFriend', {friendId: id}, {responseType: 'text'}).subscribe((res) => {
+      console.log(res);
+    });
+  }
+
+  constructor(private httpClient: HttpClient) {
+  }
 }

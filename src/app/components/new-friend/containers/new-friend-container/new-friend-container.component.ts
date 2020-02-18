@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Friend} from '../../../../entities/friend';
 import {FriendService} from '../../../../services/friend.service';
 
@@ -9,6 +9,7 @@ import {FriendService} from '../../../../services/friend.service';
 })
 export class NewFriendContainerComponent implements OnInit {
 
+@Output() addFriendCOmplete = new EventEmitter();
 
   constructor(private friendService: FriendService) {
 
@@ -19,7 +20,7 @@ export class NewFriendContainerComponent implements OnInit {
 
   saveFriend($event: Friend) {
     this.friendService.addFriend($event);
+    this.addFriendCOmplete.emit();
   }
-
 
 }

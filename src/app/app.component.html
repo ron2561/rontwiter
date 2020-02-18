@@ -32,10 +32,10 @@
 
 </mdb-navbar>
 
-<app-fl-parent></app-fl-parent>
+<app-fl-parent [friendsList]="friendsList"></app-fl-parent>
 
 <!--  <div class="middle">-->
-    <app-new-friend-container></app-new-friend-container>
+    <app-new-friend-container (addFriendCOmplete)="addFriendComplete()"></app-new-friend-container>
 <!--  </div>-->
 
 <router-outlet></router-outlet>

@@ -11,6 +11,7 @@ import { NewFriendComponent } from './components/new-friend/components/new-frien
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -29,9 +30,11 @@ import { CalendarComponent } from './components/calendar/calendar.component';
     MDBBootstrapModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    HttpClientModule
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

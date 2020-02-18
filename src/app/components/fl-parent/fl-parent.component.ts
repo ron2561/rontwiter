@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Friend} from '../../entities/friend';
 import {FriendService} from '../../services/friend.service';
+import { FriendlistComponent } from '../friendlist/friendlist.component';
 
 @Component({
   selector: 'app-fl-parent',
@@ -9,7 +10,7 @@ import {FriendService} from '../../services/friend.service';
 })
 export class FlParentComponent implements OnInit {
 
-  friendsList: Friend[];
+  @Input() friendsList: Friend[];
   friendNameFilter = '';
   searchOption: any;
 
@@ -17,7 +18,7 @@ export class FlParentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.friendsList = this.friendService.getFriendsList();
+    // this.getFriendsUpDateList()
   }
 
   getCurrentFriends() {
@@ -26,6 +27,7 @@ export class FlParentComponent implements OnInit {
     } else {
       return this.getFilteredFriends();
     }
+
     // console.log(this.searchOption);
     // return this.friendsList.filter((friend) => friend.name === this.friendNameFilter);
   }
@@ -49,4 +51,17 @@ export class FlParentComponent implements OnInit {
   resetFNF() {
     this.friendNameFilter = '';
   }
+  // getFriendsUpDateList(){
+  //   this.friendService.getFriendsList().subscribe((res) => {
+  //     this.friendsList= res as Friend[];
+  //   });
+  // }
+ 
+
+
+
+
+
+
+
 }

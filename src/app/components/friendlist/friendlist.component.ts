@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 // @ts-ignore
 import {Friend} from '../../entitie';
+import {FriendService} from '../../services/friend.service';
 
 @Component({
   selector: 'app-friendlist',
@@ -12,11 +13,16 @@ export class FriendlistComponent implements OnInit {
  @Input()
   friend: Friend;
 
-  constructor() {
+
+
+  constructor(private friendService: FriendService) {
   }
 
   ngOnInit() {
 
   }
 
+  deleteFriend(friendId: number){
+    this.friendService.deleteFriend(friendId);
+  }
 }
